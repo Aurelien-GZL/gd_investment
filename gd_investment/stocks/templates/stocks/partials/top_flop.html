@@ -1,0 +1,43 @@
+<!-- Top flop section (tab-pane) based on 'name' and 'stock_data' passed through in template -->
+<div class="tab-pane fade {% if active %} show active {% endif %}" id="{{ name }}-tab-pane" role="tabpanel"
+aria-labelledby="{{ name }}-tab" tabindex="0">
+
+    <div class='container px-3'>
+        <div class='row border-bottom border-black'>
+            <div class='col-3 px-3 py-2 fw-bold'>Nom</div>
+            <div class='col-3 px-3 py-2 fw-bold'>Dernier</div>
+            <div class='col-3 px-3 py-2 fw-bold'>Var.</div>
+            <div class='col-3 px-3 py-2 fw-bold'>Var. %</div>
+        </div>
+
+
+    <!-- Loop on all elements of the context -->
+    {% for stock in stock_data %}
+
+        <!-- Link to stock analysis page for all stocks -->
+        <a class='row lh-1 border-bottom highlight-row d-flex text-decoration-none' href="{% url 'stocks-analysis' %}?stock={{ stock.symbol }}">
+            <div class='col-3 px-3'>
+                <!-- d-flex: flex container / h-100: full height / align-items-center: vertically center / text-middle : center text / fw-medium: font weight -->
+                <!-- fs: font-size (custom font size after fs-6) -->
+                <p class='text-middle fw-semibold fs-7 d-flex align-items-center h-100 text-dark' style='font-weight: medium !important;'>{{ stock.symbol }}</p>
+            </div>
+            <div class='col-3 px-3'>
+                <p class='text-end fs-7 d-flex align-items-center h-100 text-dark'>{{ stock.close_value|floatformat:2 }}</p>
+            </div>
+            <div class='col-3 px-3'>
+                <p class='text-end fs-7 d-flex align-items-center h-100 text-dark'>{{ stock.var|floatformat:2 }}</p>
+            </div>
+            <div class='col-3 px-3'>
+                {% if stock.var_perc >= 0 %}
+                    <p class='text-end fs-7 d-flex align-items-center h-100 text-success'>+{{ stock.var_perc|floatformat:2 }}%</p>
+                {% else %}
+                    <p class='text-end fs-7 d-flex align-items-center h-100 text-danger'>{{ stock.var_perc|floatformat:2 }}%</p>
+                {% endif %}
+            </div>
+        </a>
+
+    {% endfor %}
+
+    </div>
+
+</div>

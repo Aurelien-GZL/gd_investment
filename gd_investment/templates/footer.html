@@ -1,0 +1,65 @@
+
+    <footer class="border-top">
+
+        <div class="container py-5">
+            <div class="row gy-4 align-items-center">
+                
+                <!-- Logo -->
+                <div class="col-12 col-md-4">
+                    <!-- Send back to home -->
+                    <a class="navbar-brand text-dark text-uppercase fw-bold" href="{% url 'index'%}">
+                        <span class="bg-primary bg-gradient p-1 rounded-3 text-light">G&D</span>Investment
+                    </a>
+                </div>
+
+                <!-- "Mentions legales" with link to Modal -->
+                <div class="col-12 col-md-4 text-md-center">
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a class="text-decoration-none text-dark" data-bs-toggle="modal" data-bs-target="#mentionsLegales">Mentions légales</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Pictogram -->
+                <div class="col-12 col-md-4 text-md-end">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="linkedin">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter-X">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="mentionsLegales" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Mentions Légales</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit ex error earum unde cumque iusto deleniti deserunt dolorem, ipsa delectus numquam ab dolore dolorum eos veniam dignissimos facilis accusamus!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+<!-- close html tags from the head -->
+</html>
+

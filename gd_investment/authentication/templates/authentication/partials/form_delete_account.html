@@ -1,0 +1,10 @@
+<!-- deletion account -->
+<form id="deleteAccountForm" method="post" action"">
+    {% csrf_token %}
+
+    <h5 class="fw-bold text-danger">Attention</h5>
+    <p>Vous êtes sur le point de supprimer votre compte. Cette action est irréversible et toutes vos données seront effacées.</p>
+    <p>Une fois votre compte supprimé, vous serez déconnecté et redirigé vers la page d'accueil.<p/>
+    <button type="submit" class="btn btn-outline-danger" name="delete_account" id="DeleteAccountModalBtn">Supprimer mon compte</button>
+
+</form>

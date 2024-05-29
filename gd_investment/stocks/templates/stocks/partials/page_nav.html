@@ -1,0 +1,57 @@
+<!-- Page nav bar -->
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+
+        <!-- First and previous page -->
+        {% if page_display.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1{% if search_query %}&search={{ search_query }}{% endif %}">&laquo</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_display.previous_page_number }}
+                    {% if search_query %}&search={{ search_query }}{% endif %}">Précédente</a>
+            </li>
+
+        {% else %}
+            <li class="page-item disabled">
+                <a class="page-link">Précédente</a>
+            </li>
+
+        {% endif %}
+
+        <!-- Page around current -->            
+        {% for num in page_range %}
+
+            {% if num == page_display.number %}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link">{{ num }}</a>
+            </li>
+
+            {% else %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ num }}
+                    {% if search_query %}&search={{ search_query }}{% endif %}">{{ num }}</a>
+            </li>
+
+            {% endif %}
+
+        {% endfor %}
+        
+        <!-- Next page -->
+        {% if page_display.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_display.next_page_number }}
+                    {% if search_query %}&search={{ search_query }}{% endif %}">Suivante</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_display.paginator.num_pages }}
+                    {% if search_query %}&search={{ search_query }}{% endif %}">&raquo</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <a class="page-link">Suivante</a>
+            </li>
+        {% endif %}
+    
+    </ul>
+</nav>

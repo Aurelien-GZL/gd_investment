@@ -1,0 +1,17 @@
+<!-- sorting icons -->
+
+<!-- neutral icon when no action on given column  --> 
+<a href="?sort_by={{ column }}&sort_order=desc">
+    {% if sort_by != column or sort_order == None %}
+    <i class="bi bi-caret-down-square"></i>
+    {% endif %}
+</a>
+
+<!-- Ascending and descending icons depending on sorting done -->
+<a href="?sort_by={{ column }}&sort_order={{ sort_order }}">
+    {% if sort_by == column and sort_order == "asc" %}
+    <i class="bi bi-caret-up-fill text-success"></i>
+    {% elif sort_by == column and "desc" %}
+    <i class="bi bi-caret-down-fill text-danger"></i>
+    {% endif %}
+</a>

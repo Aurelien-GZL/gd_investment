@@ -1,0 +1,25 @@
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="{{ name }}" tabindex="-1" role="dialog" aria-labelledby="{{ name }}Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-success" id="{{ name }}Label">Félicitations!</h5>
+            </div>
+            <div class="modal-body">
+                {% for message in success_messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS Script to show the modal -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $('#{{ name }}').modal('show');
+    });
+</script>

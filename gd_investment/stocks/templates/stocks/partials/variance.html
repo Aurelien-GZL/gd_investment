@@ -1,0 +1,8 @@
+<!-- colonne for price variance -->
+    {% if var >= 0 %}
+        <!-- d-flex: flex container / h-100: full height / align-items-center: vertically center / text-success: text color -->
+        <!-- fs: font-size (custom font size after fs-6) -->
+        <p class='text-end fs-7 d-flex align-items-center h-100 text-success'>+{{ var|floatformat:2 }}{{ unit }}</p>
+    {% else %}
+        <p class='text-end fs-7 d-flex align-items-center h-100 text-danger'>{{ var|floatformat:2 }}{{ unit }}</p>
+    {% endif %}

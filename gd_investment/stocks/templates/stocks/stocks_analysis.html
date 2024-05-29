@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+<!-- Page title -->
+{% block title %}Analyse actions | {{ selected_stock }} - GD investment{%endblock %} {% block content %}
+
+<!-- Container for search bar-->
+<div class="container">
+    <div class="row pt-3 pb-2">
+        <!-- Form for date selection rendered as paragraph (as_p) -->
+        <form method="GET" action="{% url 'stocks-analysis' %}" id="stocksSelectionForm" class="d-lg-flex">
+        {% csrf_token %}
+
+        <!-- Company selection -->
+        <div class="col d-flex align-items-end me-4 mb-2">
+            <div class="col-3 me-2 text-center">
+            <label for="{{ form.stock.id_for_label }}" class="form-label">{{ form.stock.label }}</label>
+            </div>
+            <div class="col-9">{{ form.stock }}</div>
+        </div>
+
+        <!-- Validate and clear values button -->
+        <div class="col d-flex">
+            <div class="col-3"></div>
+            <div class="col-9 align-items-start d-flex">
+            <button type="submit" class="btn btn-outline-primary">Valider</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Container for main information-->
+<div class="container">
+    <div class="row my-3">
+
+        <div class="col-12 col-md-6 px-4 mb-2">
+            <h1 class='text-primary'>{{ company_information.company_name }}</h1>
+            <h3 class='text-secondary'>{{ company_information.sector }}</h3>
+        </div>
+
+        <div class="col-6 col-md-3 px-3">
+            <div class="col shadow h-100 d-flex flex-column justify-content-center">
+                <h5 class="text-center">Cours ($)</h5> 
+                <h2 class="text-center text-primary">{{ stock_var.close_value|floatformat:2 }}</h2>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-3 px-3">
+            <div class="col shadow h-100 d-flex flex-column justify-content-center">
+                <h5 class="text-center">Variation (%)</h5> 
+                {% if stock_var.var_1day_perc > 0 %}
+                    <h2 class="text-center text-success">+{{ stock_var.var_1day_perc|floatformat:2 }}</h2>
+                {% else %}
+                    <h2 class="text-center text-danger">{{ stock_var.var_1day_perc|floatformat:2 }}</h2>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Container for income statement and 1 year analysis-->
+<div class="container">
+    <div class="row mb-2">
+
+        <!-- income statement -->
+        <div class="col-12 col-sm-12 col-lg-6 my-3">
+            <div class="row border-bottom border-2 border-primary mb-2 mx-0">
+                <h3 class="fw-semibold">Compte de résultat ($)</h3>
+            </div>
+            {% include 'stocks/partials/row_2_element.html' with label="Chiffre d'affaires" value=income_statement.total_revenue float_number=0 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Coût des biens et services" value=income_statement.cost_of_goods_and_services_sold sign="- " float_number=0 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Revenu des opérations" value=income_statement.operating_income float_number=0 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Depr. et amortissements" value=income_statement.depreciation_and_amortization sign="- " float_number=0 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Impôts et taxes" value=income_statement.income_tax_expense sign="- " float_number=0 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Intérêts" value=income_statement.interest_and_debt_expense sign="- " float_number=0 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Résultat net" value=income_statement.netincome float_number=0 %}
+        </div>
+
+        <!-- 1 year analysis -->
+        <div class="col-12 col-sm-12 col-lg-6 my-3">
+            <div class="row border-bottom border-2 border-primary mb-2 mx-0">
+                <h3 class="fw-semibold">Analyse sur 1 an</h3>
+            </div>
+            {% include 'stocks/partials/row_2_element.html' with label="Valeur moyenne ($)" value=stock_analysis_1year.average_value float_number=2 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Valeur minimum ($)" value=stock_analysis_1year.min_value float_number=2 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Valeur maximum ($)" value=stock_analysis_1year.max_value float_number=2 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Ecart type ($)" value=stock_analysis_1year.standard_deviation float_number=2 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Variation valeur (max/min)" value=stock_analysis_1year.var_highlow_perc sign="x" float_number=2 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Volume moyen (actions)" value=stock_analysis_1year.average_volume float_number=0 %}
+            {% include 'stocks/partials/row_2_element.html' with label="Variation volume (max/min)" value=stock_analysis_1year.var_volume_perc sign="x" float_number=1 %}
+
+        </div>
+    
+    </div>
+</div>
+
+<!-- Container for price evolution-->
+<div class="container">
+    <div class="row mb-2">
+
+        <div class="col">
+
+        <!-- Titre -->
+        <div class="row border-bottom border-2 border-primary mb-2 mx-0">
+            <h3 class="fw-semibold">Evolution du cours</h3>
+        </div>
+
+        <!-- Titre colonnes -->
+        <div class='row border-bottom border-black mx-0 px-0'>
+            <div class='col py-2 fw-bold'></div>
+            <div class="col w-100">
+                <div class='col py-2 fw-bold text-end'>6 mois</div>
+            </div>
+            <div class="col w-100">
+                <div class='col py-2 fw-bold text-end'>1 an</div>
+            </div>
+            <div class="col w-100 d-none d-sm-block">
+                <div class='col py-2 fw-bold text-end'>5 ans</div>
+            </div>
+            <div class="col w-100 d-none d-md-block">
+                <div class='col py-2 fw-bold text-end'>10 ans</div>
+            </div>
+            <div class="col w-100 d-none d-md-block">
+                <div class='col py-2 fw-bold text-end'>20 ans</div>
+            </div>
+        </div>
+
+        <!-- Titre lignes et valeurs -->
+        <div class="row mx-0 px-0 mb-4">
+            
+            <div class='col mx-0 px-0'>
+                <div class="row lh-1 border-bottom mx-0">
+                    <p class='py-2 text-start my-0 fs-6 fw-bold'>Valeur ($)</p>
+                </div>
+                <div class="row lh-1 border-bottom mx-0">
+                    <p class='py-2 text-start my-0 fs-6 fw-bold'>Var ($)</p>
+                </div>
+                <div class="row lh-1 border-bottom mx-0">
+                    <p class='py-2 text-start my-0 fs-6 fw-bold'>Var (%)</p>
+                </div>
+            </div>
+
+            <div class="col w-100 p-0 m-0">
+                {% include 'stocks/partials/stock_evolution.html' with val1=stock_var.close_value_6months val2=stock_var.var_6months val3=stock_var.var_6months_perc %}
+            </div>
+            <div class="col w-100 p-0 m-0">
+                {% include 'stocks/partials/stock_evolution.html' with val1=stock_var.close_value_1year val2=stock_var.var_1year val3=stock_var.var_1year_perc %}
+            </div>
+            <div class="col w-100 p-0 m-0 d-none d-sm-block">
+                {% include 'stocks/partials/stock_evolution.html' with val1=stock_var.close_value_5years val2=stock_var.var_5years val3=stock_var.var_5years_perc %}
+            </div>
+            <div class="col w-100 p-0 m-0 d-none d-md-block">
+                {% include 'stocks/partials/stock_evolution.html' with val1=stock_var.close_value_10years val2=stock_var.var_10years val3=stock_var.var_10years_perc %}
+            </div>
+            <div class="col w-100 p-0 m-0 d-none d-md-block">
+                {% include 'stocks/partials/stock_evolution.html' with val1=stock_var.close_value_20years val2=stock_var.var_20years val3=stock_var.var_20years_perc %}
+            </div>
+
+        </div>
+    
+    </div>
+    </div>
+</div>
+
+{% endblock %}

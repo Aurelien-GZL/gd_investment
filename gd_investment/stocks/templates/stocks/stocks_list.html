@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+
+<!-- Page title -->
+{% block title %}Liste actions - GD investment{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- Stock list -->
+
+    <div class="row border-bottom border-2 border-primary mt-4 mx-0">
+        <h3 class="fw-semibold">Liste des actions</3>
+    </div>
+
+    <!-- Search bar -->
+    {% include 'stocks/partials/search_bar.html' with stock_data=page_display %}
+
+    <!-- List of values from model -->
+    {% include 'stocks/partials/list.html' with stock_data=page_display %}
+
+    <!-- Page nav bar at the end of the list -->
+    <div class='row my-5'>
+        {% include 'stocks/partials/page_nav.html' with page_display=page_display page_range=page_range %}
+    </div>
+
+{% endblock %} 

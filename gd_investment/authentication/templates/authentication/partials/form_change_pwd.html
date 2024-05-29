@@ -1,0 +1,42 @@
+<!-- Change password form -->
+<form method="post" action="" class="mb-3" id="changePasswordForm">
+    {% csrf_token %}
+
+    <!-- Old password -->
+    <div class="form-group mb-3">
+        <label for="">{{ password_form.old_password.label }} :</label>
+        {{ password_form.old_password }}
+    </div>
+    {% include 'authentication/partials/error_message.html' with form_field=password_form.old_password %}
+
+    <!-- New password -->
+    <div class="form-group mb-3">
+        <label for="">{{ password_form.new_password1.label }} :</label>
+        <!-- Tooltip displaying help-text configured in forms.py-->
+            <span class="tooltip-container" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ password_form.new_password1.help_text }}">
+                <i class="bi bi-question-circle-fill"></i>
+            </span>
+        {{ password_form.new_password1 }}
+    </div>
+    <!-- Display error messages -->
+    {% include 'authentication/partials/error_message.html' with form_field=password_form.new_password1 %}
+
+    <!-- Confirm new password -->
+    <div class="form-group mb-3">
+        <label for="">{{ password_form.new_password2.label }} :</label>
+        {{ password_form.new_password2 }}
+    </div>
+    <!-- Display error messages -->
+    {% include 'authentication/partials/error_message.html' with form_field=password_form.new_password2 %}
+
+    <!-- Submission button -->
+    <button type="submit" class="btn btn-outline-primary" name="change_password" id="ChangePasswordModalBtn">Changer le mot de passe</button>
+
+</form>
+
+{% if password_form.errors %}
+    <!-- If the form is not valid, display an alert message -->
+    <div id="formValidationMessage" class="alert alert-danger" role="alert">
+        Veuillez renseigner votre ancien mot de passe et un nouveau mot de passe respectant les critères de sécurité
+    </div>
+{% endif %}

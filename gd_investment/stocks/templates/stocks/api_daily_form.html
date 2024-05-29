@@ -1,0 +1,62 @@
+{% extends "base.html" %} 
+
+<!-- Page title -->
+{% block title %}Requête API - GD investment{% endblock %}
+
+{% block content %}
+
+<div class="container p-4">
+    <div class="row justify-content-center">
+        <!-- Box for API generation key -->
+        <div class="col-md-9 col-lg-6 p-3 border border-secondary rounded">
+
+            <div class="text-center">
+                <h4>Accès au prix des actions</h4>
+            </div>
+            <hr>
+
+            <!-- Display form for API endpoint connection -->
+            <form method="post" action="{% url 'api-dailytrade-request' %}" id="api_daily_form">
+                
+                {% csrf_token %}                
+                {{ form.as_p }}
+
+                <!-- Error message in alert box -->
+                {% if error_message %}
+                    <div id="error-alert" class="alert alert-danger" role="alert">
+                        {{ error_message }}
+                    </div>
+                {% endif %}
+
+                <hr>
+
+                <!-- Form submission buttons trigerring different actions based on their name -->
+                <div class="col text-center">
+                    <button type="submit" name="view_data" class="btn btn-outline-primary px-4 me-4">Visualiser</button>
+                    <button type="submit" name="download_json" class="btn btn-outline-primary px-4">Télécharger</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Javascript functions -->
+<script>
+    
+    // Hide the alert after 5 seconds
+    setTimeout(function () {
+        hideElementById("error-alert");
+    }, 5000);
+
+    // Clear API key field after form submission
+    document.getElementById('api_daily_form').addEventListener('submit', function() {
+        setTimeout(function() {
+            clearField("id_api_key");
+        }, 100);
+    });
+    
+</script>
+
+{% endblock %}

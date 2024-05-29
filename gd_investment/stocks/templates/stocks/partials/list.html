@@ -1,0 +1,64 @@
+<div class='container px-3'>
+    
+    <!-- Column name and dynamic sorting icons passing through field to be sorted to icon partial template-->
+    <div class='row border-bottom border-black'>
+        <div class='col px-3 pb-2 fw-bold'>Nom
+        </div>
+        <div class='col px-3 pb-2 fw-bold'>Dernier
+            {% include 'stocks/partials/sort_icons.html' with column="close_value" %}
+        </div>
+        <div class='col px-3 pb-2 fw-bold'>Var. % 1J
+            {% include 'stocks/partials/sort_icons.html' with column="var_1day_perc" %}
+        </div>
+        <div class='col px-3 pb-2 fw-bold d-none d-sm-block'>Var. % 1M
+                {% include 'stocks/partials/sort_icons.html' with column="var_1month_perc" %}
+        </div>
+        <div class='col px-3 pb-2 fw-bold d-none d-md-block'>Var. % 6M
+            {% include 'stocks/partials/sort_icons.html' with column="var_6months_perc" %}
+        </div>
+        <div class='col px-3 pb-2 fw-bold d-none d-lg-block'>Var. % 1Y
+            {% include 'stocks/partials/sort_icons.html' with column="var_1year_perc" %}
+        </div>
+        <div class='col px-3 pb-2 fw-bold d-none d-lg-block'>Var. % 5Y
+            {% include 'stocks/partials/sort_icons.html' with column="var_5years_perc" %}
+        </div>
+    </div>
+
+
+<!-- Loop on all elements of the context to generate list table -->
+    {% for stock in stock_data %}
+
+        <!-- Link to stock analysis page for all stocks -->
+        <a class='row lh-1 border-bottom highlight-row text-decoration-none' href="{% url 'stocks-analysis' %}?stock={{ stock.symbol }}">
+            <div class='col px-3'>
+                <!-- d-flex: flex container / h-100: full height / align-items-center: vertically center / text-middle : center text / fw-medium: font weight -->
+                <!-- fs: font-size (custom font size after fs-6) -->
+                <p class='text-middle fw-semibold fs-7 d-flex align-items-center h-100 text-dark'>{{ stock.symbol }}</p>
+            </div>
+
+            <div class='col px-3'>
+                <p class='text-end fs-7 d-flex align-items-center h-100 text-dark'>{{ stock.close_value|floatformat:2 }}</p>
+            </div>
+
+            <div class='col px-3'>
+            {% include 'stocks/partials/variance.html' with var=stock.var_1day_perc unit="%" %}
+            </div>
+            <div class='col px-3 d-none d-sm-block'>
+            {% include 'stocks/partials/variance.html' with var=stock.var_1month_perc unit="%" %}
+            </div>
+            <div class='col px-3 d-none d-md-block'>
+            {% include 'stocks/partials/variance.html' with var=stock.var_6months_perc unit="%"%}
+            </div>
+            <div class='col px-3 d-none d-lg-block'>
+            {% include 'stocks/partials/variance.html' with var=stock.var_1year_perc unit="%"%}
+            </div>
+            <div class='col px-3 d-none d-lg-block'>
+            {% include 'stocks/partials/variance.html' with var=stock.var_5years_perc unit="%"%}
+            </div>
+
+        </a>
+
+    {% endfor %}
+
+</div>
+

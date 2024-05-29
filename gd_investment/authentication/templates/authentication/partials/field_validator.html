@@ -1,0 +1,16 @@
+<!-- Form field with validator displaying information and error message -->
+<div class="form-group mb-3 d-md-flex">
+    <div class="col-md-6">
+        <label for="">{{form_field.label}} :</label>
+        <!-- Tooltip displaying help-text configured in forms.py-->
+        <span class="tooltip-container" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ form_field.help_text }}">
+            <i class="bi bi-question-circle-fill"></i>
+        </span>
+    </div>
+    <div class="col-md-6">
+        {{form_field}}
+    </div>
+</div>
+<!-- Display error messages -->
+{% include 'authentication/partials/error_message.html' with form_field=form_field %}
+

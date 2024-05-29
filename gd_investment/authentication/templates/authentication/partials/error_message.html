@@ -1,0 +1,9 @@
+<!-- Display error messages -->
+{% if form_field.errors %}
+    {% for error in form_field.errors %}
+        <div class="form-group d-flex">
+            <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+            <p class="fs-7 text-danger fst-italic ms-2">{{ error }}</p>
+        </div>
+    {% endfor %}
+{% endif %}

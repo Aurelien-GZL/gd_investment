@@ -1,0 +1,122 @@
+{% load static %}
+
+<!-- bg is backgroud utility in bootstrap  -->
+<!-- navbar-expand to make navbar responsive with md as breakpoint -->
+<!-- "Helper" fixed-top to keep nav bar at top of the screen -->
+<nav class="bg-light navbar navbar-expand-md navbar-light fixed-top shadow-sm">
+  <div class="container">
+    <!-- Display brand within the navbar -->
+    <a class="navbar-brand text-uppercase fw-bold" href="{% url 'index'%}">
+      <img src="{% static 'logo.png' %}" alt="Logo" width="50" height="50" />
+    </a>
+
+    <!-- Toogle button when we are in responsive mode -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Link to website pages -->
+    <!-- id is the same than in button tag data-bs-target class -->
+    <!-- navbar will collapse into toggle button below md breakpoint size -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- Home page defined as active element -->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index'%}">Accueil</a>
+        </li>
+
+        <!-- Stocks section as dropdown menu -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Actions
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="{% url 'stocks-list'%}">Liste</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'stocks-evolution'%}"
+                >Historique</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'stocks-analysis'%}"
+                >Analyse</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- API section as dropdown menu -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            API
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="{% url 'api-key-generate'%}"
+                >Clé API</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'api-dailytrade-request'%}"
+                >Prix actions</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- User section as dropdown menu if user is connected otherwise log in button -->
+        {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ user.username }}
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="{% url 'profile'%}">Mon compte</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'logout'%}"
+                >Se déconnecter</a
+              >
+            </li>
+          </ul>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="btn btn-outline-primary" href="{% url 'login' %}"
+            >Se connecter</a
+          >
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

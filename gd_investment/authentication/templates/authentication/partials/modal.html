@@ -1,0 +1,30 @@
+<!-- Modal partial template-->
+<div class="modal fade" id={{ id_modal }} tabindex="-1" role="dialog" aria-labelledby={{ id_modal }} aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+            <!-- Modal-header -->
+            <div class="modal-header">
+                <h5 class="modal-title">{{ title_modal }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+
+            <!-- Modal-body -->
+            <div class="modal-body">
+
+            {% include partial %}
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

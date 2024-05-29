@@ -1,0 +1,36 @@
+<div class='col mx-0 px-0'>
+    
+    {% if val1 == None %}
+        <div class="row lh-1 border-bottom mx-0">
+            <p class='py-2 text-end my-0 fs-6'>&nbsp;</p>
+        </div>
+        <div class="row lh-1 border-bottom mx-0">
+            <p class='py-2 text-end my-0 fs-6'>&nbsp;</p>
+        </div>
+        <div class="row lh-1 border-bottom mx-0">
+            <p class='py-2 text-end my-0 fs-6'>&nbsp;</p>
+        </div>
+    {% else %}
+        <div class="row lh-1 border-bottom mx-0">
+            <p class='py-2 text-end my-0 fs-6'>{{ val1|floatformat:2 }}</p>
+        </div>
+    
+        {% if val2 > 0 %}
+            <div class="row lh-1 border-bottom mx-0">
+                <p class='py-2 text-end my-0 fs-6 text-success'>+{{ val2|floatformat:2 }}</p>
+            </div>
+            <div class="row lh-1 border-bottom mx-0">
+                <p class='py-2 text-end my-0 fs-6 text-success'>+{{ val3|floatformat:1 }}</p>
+            </div>
+        {% else %}
+            <div class="row lh-1 border-bottom mx-0">
+                <p class='py-2 text-end my-0 fs-6 text-danger'>{{ val2|floatformat:2 }}</p>
+            </div>
+            <div class="row lh-1 border-bottom mx-0">
+                <p class='py-2 text-end my-0 fs-6 text-danger'>{{ val3|floatformat:1 }}</p>
+            </div>
+        {% endif %}
+
+    {% endif %}
+
+</div>

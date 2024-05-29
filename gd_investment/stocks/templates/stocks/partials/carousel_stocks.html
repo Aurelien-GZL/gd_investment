@@ -1,0 +1,41 @@
+<!-- Dynamically adjust the animation time based on data model length -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var stockCarousel = document.getElementById('stock-carousel');
+        var totalCards = {{ stock_data|length }};
+    
+        // Calculate styles dynamically
+        var styles = `
+
+            .slide-stocks {
+                animation: ${totalCards * 1.5}s slide infinite linear;
+            }`;
+    
+        // Create a style element and append it to the document head
+        var styleElement = document.createElement('style');
+        styleElement.innerHTML = styles;
+        document.head.appendChild(styleElement);
+    });
+</script>
+
+
+<!-- Specific container for stocks carousels displaying them inline through custom CSS -->
+<div class='slide-container overflow-hidden py-2'>
+    
+    <!-- First stock carousel using card stock partial template -->
+    <div class='slide-stocks' id='stock-carousel'>
+        {% for data in stock_data %}
+            <!-- Container to apply custom CSS to cards and link to stock analysis page for all stocks -->
+            <a class='card-container text-decoration-none' href="{% url 'stocks-analysis' %}?stock={{ data.symbol }}">
+                {% include 'stocks/partials/card_stocks.html' with data=data %}
+            </a>
+        {% endfor %}
+    </div>
+    
+    <!-- Second stock carousel to simulate infinite loop -->
+    <script>
+        var copy = document.querySelector('.slide-stocks').cloneNode(true)
+        document.querySelector('.slide-container').appendChild(copy);
+    </script>
+
+</div>

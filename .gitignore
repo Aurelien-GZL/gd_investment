@@ -1,0 +1,23 @@
+# Excluded folder / files
+input/
+design/
+get-data-test/
+get-data-local/
+package-lock.json
+package.json
+.env
+
+# Distribution / virtual environnement
+__pycache__/
+venv/
+node_modules/
+
+# Serverless
+.serverless
+
+# Django
+*.sqlite3
+
+# Project follow-up
+project_followup.md
+

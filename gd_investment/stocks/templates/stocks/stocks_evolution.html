@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+<!-- Page title -->
+{% block title %}Historique des cours | {{ selected_stock }} - GD investment{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row pt-5 pb-2 mx-4">
+
+        <!-- Form for date selection rendered as paragraph (as_p) -->
+        <form method="GET" action="{% url 'stocks-evolution' %}" id="stocksEvolutionForm" class="d-lg-flex">
+            {% csrf_token %}
+            
+            <!-- Date selection -->
+            <div class="col d-flex align-items-end me-4 mb-2">
+                <div class="col-3 me-2 text-end">
+                    <label for="{{ form.start.id_for_label }}" class="form-label">{{ form.start.label }}</label>
+                </div>
+                <div class="col-9">
+                    {{ form.start }}
+                </div>
+            </div>
+            
+            <div class="col d-flex align-items-end me-4 mb-2">
+                <div class="col-3 me-2 text-end">
+                    <label for="{{ form.end.id_for_label }}" class="form-label">{{ form.end.label }}</label>
+                </div>
+                <div class="col-9">
+                    {{ form.end }}
+                </div>
+            </div>
+        
+            <!-- Company selection -->
+            <div class="col d-flex align-items-end me-4 mb-2">    
+                <div class="col-3 me-2 text-end">
+                    <label for="{{ form.stock.id_for_label }}" class="form-label">{{ form.stock.label }}</label>
+                </div>
+                <div class="col-9">
+                    {{ form.stock }}
+                </div>
+            </div>
+            
+            <!-- Validate and clear values button -->
+            <div class="col d-flex">
+                <div class="col-3"></div>
+                <div class="col-9 align-items-start d-flex">
+                    <button type="submit" class="btn btn-outline-primary">Valider</button>
+                    <button type="button" class="btn btn-outline-secondary ms-2" onclick="clearValues('id_start', 'id_end')">Effacer</button>
+                </div>
+            </div>
+
+        </form>
+        
+    </div>
+
+    <!-- display chart using safe method for html rendering -->
+    <div id="chart">{{ chart|safe }}</div>
+
+</div>
+
+{% endblock %}

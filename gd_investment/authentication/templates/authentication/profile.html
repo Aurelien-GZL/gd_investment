@@ -1,0 +1,90 @@
+{% extends "base.html" %} 
+
+<!-- Page title -->
+{% block title %}Mon compte - GD investment{% endblock %}
+
+{% block content %}
+
+    <div class="container p-4">
+        <div class="row justify-content-center">
+            <!-- Box for subscription form -->
+            <div class="col-md-11 col-lg-8 p-3 border border-secondary rounded">
+                <div class="text-center">
+                    <h4>Mon compte</h4>
+                </div>
+                <hr>
+
+                <!-- Change profile section -->
+                <form method="post" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <!-- Display success message if it exists -->
+                    {% if success_message %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ success_message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Use of partial template for fields with tooltips and validators -->
+                    {% include 'authentication/partials/field_validator.html' with form_field=change_form.username %}
+
+                    <!-- Basic user form fields -->
+                    <div class="form-group mb-3 d-md-flex">
+                        <div class="col-md-6">
+                            <label for="">{{change_form.first_name.label}} :</label>
+                        </div>
+                        {{change_form.first_name}}
+                    </div>
+
+                    <div class="form-group mb-3 d-md-flex">
+                        <div class="col-md-6">
+                            <label for="">{{change_form.last_name.label}} :</label>
+                        </div>
+                        {{change_form.last_name}}
+                    </div>
+
+                    {% include 'authentication/partials/field_validator.html' with form_field=change_form.email %}
+                    
+                    <!-- Subscription button -->
+                    <div class="col text-center">
+                        <button type="submit" name="update_profile" class="btn btn-outline-primary px-4">Sauvegarder</button>
+                    </div>
+                </form>
+                <hr>
+
+                <!-- Change password section -->
+                <div class="d-flex"> 
+                    <div class="flex-grow-1">
+                        <label for="">Changer mon mot de passe :</label>
+                    </div>
+                    <div class="">
+                        <button type="submit" name="" class="btn btn-outline-primary px-4" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Changer</button>
+                    </div>
+                    {% include 'authentication/partials/modal.html' with partial='authentication/partials/form_change_pwd.html' id_modal="changePasswordModal" title_modal="Changer le mot de passe" %}
+                </div>        
+                <hr>
+
+                <!-- Delete user account section -->
+                <div class="d-flex"> 
+                    <div class="flex-grow-1">
+                        <label for="">Supprimer votre compte :</label>
+                    </div>
+                    <div class="">
+                        <button type="submit" name="" class="btn btn-outline-danger px-4" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">Supprimer</button>
+                    </div>
+                    {% include 'authentication/partials/modal.html' with partial='authentication/partials/form_delete_account.html' id_modal="deleteAccountModal" title_modal="Supprimer mon compte" %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Call the handleModal function from functions.js to keep showing change password modal as long as form has errors -->
+    <script>
+        $(document).ready(function () {
+            handleModal('#changePasswordModal', '{{ password_form.errors }}');
+        });
+    </script>
+
+{% endblock %}

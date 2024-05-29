@@ -1,0 +1,7 @@
+<!-- Dynamique tab button linked to corresponding section trhough 'name' variable -->
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link {% if active %} active {% endif %}" id="{{ name }}-tab" data-bs-toggle="tab"
+        data-bs-target="#{{ name }}-tab-pane" type="button" role="tab"
+        aria-controls="{{ name }}-tab-pane" aria-selected="true">{{ tab_name }}</button>
+</li>

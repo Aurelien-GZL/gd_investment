@@ -1,0 +1,92 @@
+/* hover effect with background color definition */
+/*-----------------------------------------------*/
+.highlight-row:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* additional font sizes */
+/*-----------------------*/
+.fs-7 {
+    font-size: 0.875rem;
+}
+.fs-8 {
+    font-size: 0.750rem;
+}
+.fs-9 {
+    font-size: 0.625rem;
+}
+.fs-10 {
+    font-size: 0.500rem;
+}
+
+
+/* Stock carousel */
+/*----------------*/
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.slide-container {
+    white-space: nowrap;
+    /*display: inline-block*/;
+}
+
+.slide-container:hover .slide-stocks {
+    animation-play-state: paused;
+}
+
+.slide-stocks {
+    /* Animation is generated directly through JS script within carousel_stocks.html template */
+    display: inline-flex;
+}
+
+.card-container {
+    flex: 0 0 auto;
+    margin-right: 1.5rem;
+    width: 125px;
+    height: 150px;
+}
+
+
+/* Stock card hovering */
+/*---------------------*/
+.card {
+    transition: transform 0.3s, box-shadow 0.3s; /* Add a smooth transition effect for both transform and box-shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the card */
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust form fields size */
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+}
+
+
+/* Footer at bottom of each page
+/*-------------------------------*/
+/* Ensures that the body takes at least the full height of the viewport */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* Makes the content section grow and take remaining vertical space */
+.content {
+    flex: 1;
+}
+
+/* Prevents the footer from shrinking */
+.footer {
+    flex-shrink: 0; 
+}

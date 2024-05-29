@@ -1,0 +1,23 @@
+{% include 'head.html' %}
+
+        <!-- Title block to define on all pages-->
+        <title>{% block title %}{% endblock %}</title>
+
+    </head>
+
+    
+    <body>
+
+        <header class="py-5">
+        {% include 'navbar.html' %}
+        </header>
+        
+        <main class="content">
+        {% block content %}{% endblock %}
+        </main>
+        
+        {% include 'footer.html' %} 
+
+    </body>
+
+</html>

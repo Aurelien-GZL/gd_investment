@@ -1,0 +1,22 @@
+{% include "head.html" %} 
+
+    <!-- Page title -->
+    <title>Résultat API - GD investment</title>
+
+</head>
+
+<body>
+
+    <!-- Return button -->
+    <div class="col text-end me-5 mt-2">
+        <a class="btn shadow btn-primary px-4" href="{% url 'api-dailytrade-request' %}">Retour</a>
+    </div>
+
+    <!-- Display data in JSON format -->
+    {% if data %}
+    <pre>{{ data | safe }}</pre>
+    {% endif %}
+
+</body>
+
+</html>

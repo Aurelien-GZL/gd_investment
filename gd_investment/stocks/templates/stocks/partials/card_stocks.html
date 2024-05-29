@@ -1,0 +1,15 @@
+<!-- Display stock price and var data -->
+
+    <div class='card'>
+        <div class='card-header bg-primary text-white'>
+            {{ data.symbol }}
+        </div>
+        <div class='card-body'>
+            <h5 class='card-title mx-0'>${{ data.close_value|floatformat:2 }}</h5>
+            {% if data.var_perc >= 0 %}
+            <p class='card-text text-success'>+{{ data.var_perc|floatformat:2 }}%</p>
+            {% else %}
+            <p class='card-text text-danger'>{{ data.var_perc|floatformat:2 }}%</p>
+            {% endif %}
+        </div>
+    </div>

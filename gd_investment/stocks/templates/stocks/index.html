@@ -1,0 +1,98 @@
+{% extends "base.html" %} 
+
+<!-- Page title -->
+{% block title %}Accueil | Gérez vos investissements - GD investment{% endblock %}
+
+{% block content %}
+
+<!-- Pop-up if subscription is successful -->
+{% if signup_success %}
+    {% include 'stocks/partials/modal_success.html' with sucess_messages=sucess_messages name='successModal' %}
+{% endif %}
+
+<!-- Section for top 10 and flop 10 day to day variances-->
+<section id="topdown" class="py-4">
+    <div class="container">
+        <div class="row gy-4">
+            
+            <!-- Top 10 part -->
+            <div class="col-12 col-sm-12 col-md-6">
+                
+                <div class="row border-bottom border-2 border-primary mb-2 mx-0">
+                    <h3 class="fw-semibold">Top 10</h3>
+                </div>
+
+                <!-- Tab button based on partial template redirecting to corresponding data -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    {% include 'stocks/partials/tab.html' with name='D1_top' tab_name='1J' active=True %}
+                    {% include 'stocks/partials/tab.html' with name='M1_top' tab_name='1M' %}
+                    {% include 'stocks/partials/tab.html' with name='M3_top' tab_name='3M' %}
+                    {% include 'stocks/partials/tab.html' with name='M6_top' tab_name='6M' %}
+                    {% include 'stocks/partials/tab.html' with name='Y1_top' tab_name='1Y' %}
+                    {% include 'stocks/partials/tab.html' with name='Y5_top' tab_name='5A' %}
+                    {% include 'stocks/partials/tab.html' with name='Y10_top' tab_name='10A' %}
+                    {% include 'stocks/partials/tab.html' with name='Y20_top' tab_name='20A' %}
+                </ul>
+                
+                <!-- Results using partial template -->
+                <div class="tab-content" id="myTabContent">
+                    {% include 'stocks/partials/top_flop.html' with name='D1_top' stock_data=top_data.1day active=True %}
+                    {% include 'stocks/partials/top_flop.html' with name='M1_top' stock_data=top_data.1month %}
+                    {% include 'stocks/partials/top_flop.html' with name='M3_top' stock_data=top_data.3months %}
+                    {% include 'stocks/partials/top_flop.html' with name='M6_top' stock_data=top_data.6months %}
+                    {% include 'stocks/partials/top_flop.html' with name='Y1_top' stock_data=top_data.1year %}
+                    {% include 'stocks/partials/top_flop.html' with name='Y5_top' stock_data=top_data.5years %}
+                    {% include 'stocks/partials/top_flop.html' with name='Y10_top' stock_data=top_data.10years %}
+                    {% include 'stocks/partials/top_flop.html' with name='Y20_top' stock_data=top_data.20years %}
+                </div>
+                
+            </div>
+                        
+
+            <!-- Flop 10 part -->
+            <div class="col-12 col-md-6">
+
+                <div class="row border-bottom border-2 border-primary mb-2 mx-0">
+                    <h3 class="fw-semibold">Flop 10</h3>
+                </div>
+
+                <!-- Tab button based on partial template redirecting to corresponding data -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    {% include 'stocks/partials/tab.html' with name='D1_flop' tab_name='1J' active=True %}
+                    {% include 'stocks/partials/tab.html' with name='M1_flop' tab_name='1M' %}
+                    {% include 'stocks/partials/tab.html' with name='M3_flop' tab_name='3M' %}
+                    {% include 'stocks/partials/tab.html' with name='M6_flop' tab_name='6M' %}
+                    {% include 'stocks/partials/tab.html' with name='Y1_flop' tab_name='1Y' %}
+                    {% include 'stocks/partials/tab.html' with name='Y5_flop' tab_name='5A' %}
+                    {% include 'stocks/partials/tab.html' with name='Y10_flop' tab_name='10A' %}
+                    {% include 'stocks/partials/tab.html' with name='Y20_flop' tab_name='20A' %}
+                </ul>
+                
+                <!-- Results using partial template -->
+                <div class="tab-content" id="myTabContent">
+                    {% include 'stocks/partials/top_flop.html' with name='D1_flop' stock_data=flop_data.1day active=True %}
+                    {% include 'stocks/partials/top_flop.html' with name='M1_flop' stock_data=flop_data.1month %}
+                    {% include 'stocks/partials/top_flop.html' with name='M3_flop' stock_data=flop_data.3months %}
+                    {% include 'stocks/partials/top_flop.html' with name='M6_flop' stock_data=flop_data.6months %}
+                    {% include 'stocks/partials/top_flop.html' with name='Y1_flop' stock_data=flop_data.1year %}
+                    {% include 'stocks/partials/top_flop.html' with name='Y5_flop' stock_data=flop_data.5years %}
+                    {% include 'stocks/partials/top_flop.html' with name='Y10_flop' stock_data=flop_data.10years %}
+                    {% include 'stocks/partials/top_flop.html' with name='Y20_flop' stock_data=flop_data.20years %}
+                </div>
+            
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Section for carousel with stocks main data -->
+<section id="stockcarousel" class="py-4 bg-light">
+    <div class="container">
+            <h4 class="fw-semibold">Variations journalières</h4>
+                {% include 'stocks/partials/carousel_stocks.html' with stock_data=daily_var_data %}
+    </div>
+</section>
+
+{% endblock %}

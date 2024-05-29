@@ -1,0 +1,8 @@
+{% load humanize %}
+
+<div class="row lh-1 border-bottom highlight-row d-flex mx-0 align-items-center">
+    <div class="col-7 fw-bold fs-6 py-2 text-start">{{ label }}</div>
+    <div class="col-5 py-2">
+        <p class="my-0 text-end fs-6">{{sign}}{{ value|floatformat:float_number|intcomma|stringformat:"s" }}</p>
+    </div>
+</div>

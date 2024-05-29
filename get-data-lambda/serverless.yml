@@ -1,0 +1,52 @@
+service: get-data
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  # Faster deployement (will be the standard in Serverless V4)
+  deploymentMethod: direct
+  region: eu-west-3
+  runtime: python3.11
+  profile: default
+  # Allow Lambda to connect to AWS 
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+      Resource: "arn:aws:s3:::xxx/*" # Replace "xxx" with your actual S3 bucket name
+
+functions:
+  # One function to handle 30 API calls per hours (max limit of the API)
+  historical_daily_data_S3:
+    handler: hist_daily_S3.historical_daily_data
+    description: collect daily trading data for selected tickers
+    # Schedule to run every night of the week once US stocks markets are closed
+    events:
+      - schedule: cron(0 3 ? * TUE-SAT *)
+    # Maximum execution time in seconds
+    timeout: 900
+    # Number of retries on failure
+    maximumRetryAttempts: 2
+    tags:
+      environment: production
+  
+  historical_daily_data_S3_2:
+    handler: hist_daily_S3_2.historical_daily_data
+    description: collect daily trading data for selected tickers
+    # Schedule to run every night of the week once US stocks markets are closed
+    events:
+      - schedule: cron(0 5 ? * TUE-SAT *)
+    # Maximum execution time in seconds
+    timeout: 900
+    # Number of retries on failure
+    maximumRetryAttempts: 2
+    tags:
+      environment: production
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux

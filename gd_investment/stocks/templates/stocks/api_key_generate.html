@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+
+<!-- Page title -->
+{% block title %}Clé API - GD investment{% endblock %}
+
+{% block content %}
+
+<div class="container p-4">
+    <div class="row justify-content-center">
+        <!-- Box for API generation key -->
+        <div class="col-md-9 col-lg-6 p-3 border border-secondary rounded">
+
+            <div class="text-center">
+                <h4>Générer une clé API</h4>
+            </div>
+            <hr>
+
+            <div>
+                <p>Cliquez ci-dessous pour générer une clé API.</p>
+                <p class="text-danger">Cette clé est unique et ne doit pas être communiquée à un autre utilisateur que vous.</p>
+                <p>Une fois la clé affichée, veuillez la noter et la conserver en lieu sûr car celle-ci ne pourra plus être visualisée.</p>
+                <p>En cas de perte, il faudra en générer une nouvelle.</p>
+            </div>
+            <hr>
+
+            <!-- Button to generate API key -->
+            <form method="post" action="{% url 'api-key-generate' %}">
+                {% csrf_token %}
+                <div class="col text-center">
+                    <button type="submit" name="generate_api_key" class="btn btn-outline-primary px-4">Générer</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

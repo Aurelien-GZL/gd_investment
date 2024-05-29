@@ -1,0 +1,52 @@
+{% extends "base.html" %} 
+
+<!-- Page title -->
+{% block title %}Inscription - GD investment{% endblock %}
+
+{% block content %}
+
+    <div class="container p-4">
+        <div class="row justify-content-center">
+            <!-- Box for subscription form -->
+            <div class="col-md-11 col-lg-8 p-3 border border-secondary rounded">
+            
+                <form method="post" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="text-center">
+                        <h4>Inscription<h4>
+                    </div>
+                    <hr>
+                    
+                    <!-- Use of partial template for fields with tooltips and validators -->
+                    {% include 'authentication/partials/field_validator.html' with form_field=form.username %}
+
+                    <!-- Basic user form fields -->
+                    <div class="form-group mb-3 d-md-flex">
+                        <div class="col-md-6">
+                            <label for="">{{form.first_name.label}} :</label>
+                        </div>
+                        {{form.first_name}}
+                    </div>
+
+                    <div class="form-group mb-3 d-md-flex">
+                        <div class="col-md-6">
+                            <label for="">{{form.last_name.label}} :</label>
+                        </div>
+                        {{form.last_name}}
+                    </div>
+
+                    {% include 'authentication/partials/field_validator.html' with form_field=form.email %}
+                    {% include 'authentication/partials/field_validator.html' with form_field=form.password1 %}
+                    {% include 'authentication/partials/field_validator.html' with form_field=form.password2 %}
+
+                    <!-- Subscription button -->
+                    <div class="col text-center">
+                        <button type="submit" class="btn shadow btn-primary px-4">S'inscrire</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

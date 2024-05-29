@@ -1,0 +1,503 @@
+S.No.	Company Name	Ticker	Sector
+1	Apple Inc.	AAPL	Information Technology
+2	Microsoft Corporation	MSFT	Information Technology
+3	Amazon.com Inc.	AMZN	Consumer Discretionary
+4	NVIDIA Corporation	NVDA	Information Technology
+5	Alphabet Inc. Class A	GOOGL	Communication Services
+6	Berkshire Hathaway Inc. Class B	BRK.B	Financials
+7	Alphabet Inc. Class C	GOOG	Communication Services
+8	Tesla Inc.	TSLA	Consumer Discretionary
+9	UnitedHealth Group Incorporated	UNH	Health Care
+10	Meta Platforms Inc. Class A	META	Communication Services
+11	Exxon Mobil Corporation	XOM	Energy
+12	Johnson & Johnson	JNJ	Health Care
+13	JPMorgan Chase & Co.	JPM	Financials
+14	Visa Inc. Class A	V	Financials
+15	Procter & Gamble Company	PG	Consumer Staples
+16	Mastercard Incorporated Class A	MA	Financials
+17	Chevron Corporation	CVX	Energy
+18	Home Depot Inc.	HD	Consumer Discretionary
+19	Eli Lilly and Company	LLY	Health Care
+20	Merck & Co. Inc.	MRK	Health Care
+21	AbbVie Inc.	ABBV	Health Care
+22	Broadcom Inc.	AVGO	Information Technology
+23	PepsiCo Inc.	PEP	Consumer Staples
+24	Coca-Cola Company	KO	Consumer Staples
+25	Pfizer Inc.	PFE	Health Care
+26	Thermo Fisher Scientific Inc.	TMO	Health Care
+27	Costco Wholesale Corporation	COST	Consumer Staples
+28	McDonald's Corporation	MCD	Consumer Discretionary
+29	Walmart Inc.	WMT	Consumer Staples
+30	Cisco Systems Inc.	CSCO	Information Technology
+31	Bank of America Corp	BAC	Financials
+32	Salesforce Inc.	CRM	Information Technology
+33	Walt Disney Company	DIS	Communication Services
+34	Abbott Laboratories	ABT	Health Care
+35	Accenture Plc Class A	ACN	Information Technology
+36	Linde plc	LIN	Materials
+37	Adobe Incorporated	ADBE	Information Technology
+38	Danaher Corporation	DHR	Health Care
+39	Verizon Communications Inc.	VZ	Communication Services
+40	Texas Instruments Incorporated	TXN	Information Technology
+41	Comcast Corporation Class A	CMCSA	Communication Services
+42	NIKE Inc. Class B	NKE	Consumer Discretionary
+43	NextEra Energy Inc.	NEE	Utilities
+44	Philip Morris International Inc.	PM	Consumer Staples
+45	Netflix Inc.	NFLX	Communication Services
+46	Wells Fargo & Company	WFC	Financials
+47	Bristol-Myers Squibb Company	BMY	Health Care
+48	Raytheon Technologies Corporation	RTX	Industrials
+49	Advanced Micro Devices Inc.	AMD	Information Technology
+50	Oracle Corporation	ORCL	Information Technology
+51	AT&T Inc.	T	Communication Services
+52	United Parcel Service Inc. Class B	UPS	Industrials
+53	QUALCOMM Incorporated	QCOM	Information Technology
+54	Amgen Inc.	AMGN	Health Care
+55	ConocoPhillips	COP	Energy
+56	Intel Corporation	INTC	Information Technology
+57	Honeywell International Inc.	HON	Industrials
+58	Intuit Inc.	INTU	Information Technology
+59	Starbucks Corporation	SBUX	Consumer Discretionary
+60	Lowe's Companies Inc.	LOW	Consumer Discretionary
+61	Union Pacific Corporation	UNP	Industrials
+62	Boeing Company	BA	Industrials
+63	Elevance Health Inc.	ELV	Health Care
+64	International Business Machines Corporation	IBM	Information Technology
+65	Caterpillar Inc.	CAT	Industrials
+66	S&P Global Inc.	SPGI	Financials
+67	Goldman Sachs Group Inc.	GS	Financials
+68	Prologis Inc.	PLD	Real Estate
+69	Morgan Stanley	MS	Financials
+70	Lockheed Martin Corporation	LMT	Industrials
+71	Medtronic Plc	MDT	Health Care
+72	Deere & Company	DE	Industrials
+73	Gilead Sciences Inc.	GILD	Health Care
+74	General Electric Company	GE	Industrials
+75	Booking Holdings Inc.	BKNG	Consumer Discretionary
+76	BlackRock Inc.	BLK	Financials
+77	Stryker Corporation	SYK	Health Care
+78	ServiceNow Inc.	NOW	Information Technology
+79	American Tower Corporation	AMT	Real Estate
+80	CVS Health Corporation	CVS	Health Care
+81	American Express Company	AXP	Financials
+82	Mondelez International Inc. Class A	MDLZ	Consumer Staples
+83	Analog Devices Inc.	ADI	Information Technology
+84	Applied Materials Inc.	AMAT	Information Technology
+85	Intuitive Surgical Inc.	ISRG	Health Care
+86	Citigroup Inc.	C	Financials
+87	Automatic Data Processing Inc.	ADP	Industrials
+88	TJX Companies Inc	TJX	Consumer Discretionary
+89	Regeneron Pharmaceuticals Inc.	REGN	Health Care
+90	T-Mobile US Inc.	TMUS	Communication Services
+91	Vertex Pharmaceuticals Incorporated	VRTX	Health Care
+92	PayPal Holdings Inc.	PYPL	Financials
+93	Marsh & McLennan Companies Inc.	MMC	Financials
+94	Chubb Limited	CB	Financials
+95	Zoetis Inc. Class A	ZTS	Health Care
+96	Progressive Corporation	PGR	Financials
+97	Altria Group Inc.	MO	Consumer Staples
+98	Cigna Group	CI	Health Care
+99	Southern Company	SO	Utilities
+100	Charles Schwab Corp	SCHW	Financials
+101	Duke Energy Corporation	DUK	Utilities
+102	Target Corporation	TGT	Consumer Staples
+103	Schlumberger N.V.	SLB	Energy
+104	Boston Scientific Corporation	BSX	Health Care
+105	Fiserv Inc.	FISV	Financials
+106	Becton Dickinson and Company	BDX	Health Care
+107	EOG Resources Inc.	EOG	Energy
+108	Micron Technology Inc.	MU	Information Technology
+109	Northrop Grumman Corp.	NOC	Industrials
+110	CME Group Inc. Class A	CME	Financials
+111	Lam Research Corporation	LRCX	Information Technology
+112	Aon Plc Class A	AON	Financials
+113	Humana Inc.	HUM	Health Care
+114	Equinix Inc.	EQIX	Real Estate
+115	Illinois Tool Works Inc.	ITW	Industrials
+116	Colgate-Palmolive Company	CL	Consumer Staples
+117	Eaton Corp. Plc	ETN	Industrials
+118	CSX Corporation	CSX	Industrials
+119	Air Products and Chemicals Inc.	APD	Materials
+120	Waste Management Inc.	WM	Industrials
+121	Freeport-McMoRan Inc.	FCX	Materials
+122	Activision Blizzard Inc.	ATVI	Communication Services
+123	Intercontinental Exchange Inc.	ICE	Financials
+124	Cadence Design Systems Inc.	CDNS	Information Technology
+125	Marathon Petroleum Corporation	MPC	Energy
+126	3M Company	MMM	Industrials
+127	Estee Lauder Companies Inc. Class A	EL	Consumer Staples
+128	Synopsys Inc.	SNPS	Information Technology
+129	Crown Castle Inc.	CCI	Real Estate
+130	HCA Healthcare Inc	HCA	Health Care
+131	O'Reilly Automotive Inc.	ORLY	Consumer Discretionary
+132	Pioneer Natural Resources Company	PXD	Energy
+133	FedEx Corporation	FDX	Industrials
+134	Sherwin-Williams Company	SHW	Materials
+135	Moderna Inc.	MRNA	Health Care
+136	Edwards Lifesciences Corporation	EW	Health Care
+137	KLA Corporation	KLAC	Information Technology
+138	General Mills Inc.	GIS	Consumer Staples
+139	General Dynamics Corporation	GD	Industrials
+140	Valero Energy Corporation	VLO	Energy
+141	McKesson Corporation	MCK	Health Care
+142	Phillips 66	PSX	Energy
+143	U.S. Bancorp	USB	Financials
+144	AutoZone Inc.	AZO	Consumer Discretionary
+145	Ford Motor Company	F	Consumer Discretionary
+146	PNC Financial Services Group Inc.	PNC	Financials
+147	Emerson Electric Co.	EMR	Industrials
+148	Dominion Energy Inc	D	Utilities
+149	Sempra Energy	SRE	Utilities
+150	Dollar General Corporation	DG	Consumer Staples
+151	Motorola Solutions Inc.	MSI	Information Technology
+152	American Electric Power Company Inc.	AEP	Utilities
+153	General Motors Company	GM	Consumer Discretionary
+154	Public Storage	PSA	Real Estate
+155	Moody's Corporation	MCO	Financials
+156	Chipotle Mexican Grill Inc.	CMG	Consumer Discretionary
+157	Norfolk Southern Corporation	NSC	Industrials
+158	Occidental Petroleum Corporation	OXY	Energy
+159	Roper Technologies Inc.	ROP	Information Technology
+160	Amphenol Corporation Class A	APH	Information Technology
+161	Kimberly-Clark Corporation	KMB	Consumer Staples
+162	DexCom Inc.	DXCM	Health Care
+163	Truist Financial Corporation	TFC	Financials
+164	Corteva Inc	CTVA	Materials
+165	Archer-Daniels-Midland Company	ADM	Consumer Staples
+166	NXP Semiconductors NV	NXPI	Information Technology
+167	Marriott International Inc. Class A	MAR	Consumer Discretionary
+168	Fortinet Inc.	FTNT	Information Technology
+169	Microchip Technology Incorporated	MCHP	Information Technology
+170	MSCI Inc. Class A	MSCI	Financials
+171	Exelon Corporation	EXC	Utilities
+172	Autodesk Inc.	ADSK	Information Technology
+173	Arthur J. Gallagher & Co.	AJG	Financials
+174	Biogen Inc.	BIIB	Health Care
+175	Agilent Technologies Inc.	A	Health Care
+176	Ecolab Inc.	ECL	Materials
+177	Parker-Hannifin Corporation	PH	Industrials
+178	Hess Corporation	HES	Energy
+179	Arista Networks Inc.	ANET	Information Technology
+180	Newmont Corporation	NEM	Materials
+181	Trane Technologies plc	TT	Industrials
+182	Monster Beverage Corporation	MNST	Consumer Staples
+183	TE Connectivity Ltd.	TEL	Information Technology
+184	Travelers Companies Inc.	TRV	Financials
+185	Dow Inc.	DOW	Materials
+186	IDEXX Laboratories Inc.	IDXX	Health Care
+187	Cintas Corporation	CTAS	Industrials
+188	Johnson Controls International plc	JCI	Industrials
+189	MetLife Inc.	MET	Financials
+190	TransDigm Group Incorporated	TDG	Industrials
+191	Xcel Energy Inc.	XEL	Utilities
+192	Realty Income Corporation	O	Real Estate
+193	L3Harris Technologies Inc	LHX	Industrials
+194	American International Group Inc.	AIG	Financials
+195	Centene Corporation	CNC	Health Care
+196	Hilton Worldwide Holdings Inc	HLT	Consumer Discretionary
+197	Hershey Company	HSY	Consumer Staples
+198	Yum! Brands Inc.	YUM	Consumer Discretionary
+199	Sysco Corporation	SYY	Consumer Staples
+200	IQVIA Holdings Inc	IQV	Health Care
+201	Aflac Incorporated	AFL	Financials
+202	PACCAR Inc	PCAR	Industrials
+203	Nucor Corporation	NUE	Materials
+204	Williams Companies Inc.	WMB	Energy
+205	Carrier Global Corp.	CARR	Industrials
+206	Constellation Brands Inc. Class A	STZ	Consumer Staples
+207	Capital One Financial Corp	COF	Financials
+208	Charter Communications Inc. Class A	CHTR	Communication Services
+209	Illumina Inc.	ILMN	Health Care
+210	Ross Stores Inc.	ROST	Consumer Discretionary
+211	Devon Energy Corporation	DVN	Energy
+212	Simon Property Group Inc.	SPG	Real Estate
+213	Mettler-Toledo International Inc.	MTD	Health Care
+214	Welltower Inc.	WELL	Real Estate
+215	Kinder Morgan Inc Class P	KMI	Energy
+216	Paychex Inc.	PAYX	Industrials
+217	Consolidated Edison Inc.	ED	Utilities
+218	Otis Worldwide Corporation	OTIS	Industrials
+219	Bank of New York Mellon Corp	BK	Financials
+220	Electronic Arts Inc.	EA	Communication Services
+221	Fidelity National Information Services Inc.	FIS	Financials
+222	ON Semiconductor Corporation	ON	Information Technology
+223	ResMed Inc.	RMD	Health Care
+224	Copart Inc.	CPRT	Industrials
+225	VICI Properties Inc	VICI	Real Estate
+226	Ameriprise Financial Inc.	AMP	Financials
+227	Cummins Inc.	CMI	Industrials
+228	DuPont de Nemours Inc.	DD	Materials
+229	PPG Industries Inc.	PPG	Materials
+230	AMETEK Inc.	AME	Industrials
+231	Rockwell Automation Inc.	ROK	Industrials
+232	Public Service Enterprise Group Inc	PEG	Utilities
+233	Dollar Tree Inc.	DLTR	Consumer Staples
+234	Cognizant Technology Solutions Corporation Class A	CTSH	Information Technology
+235	Prudential Financial Inc.	PRU	Financials
+236	Kraft Heinz Company	KHC	Consumer Staples
+237	Warner Bros. Discovery Inc. Series A	WBD	Communication Services
+238	WEC Energy Group Inc	WEC	Utilities
+239	Halliburton Company	HAL	Energy
+240	D.R. Horton Inc.	DHI	Consumer Discretionary
+241	Kroger Co.	KR	Consumer Staples
+242	Verisk Analytics Inc	VRSK	Industrials
+243	Allstate Corporation	ALL	Financials
+244	Old Dominion Freight Line Inc.	ODFL	Industrials
+245	GE Healthcare Technologies Inc.	GEHC	Health Care
+246	Fastenal Company	FAST	Industrials
+247	ONEOK Inc.	OKE	Energy
+248	Keurig Dr Pepper Inc.	KDP	Consumer Staples
+249	Baker Hughes Company Class A	BKR	Energy
+250	American Water Works Company Inc.	AWK	Utilities
+251	W.W. Grainger Inc.	GWW	Industrials
+252	Aptiv PLC	APTV	Consumer Discretionary
+253	SBA Communications Corp. Class A	SBAC	Real Estate
+254	Keysight Technologies Inc	KEYS	Information Technology
+255	Enphase Energy Inc.	ENPH	Information Technology
+256	CoStar Group Inc.	CSGP	Industrials
+257	Republic Services Inc.	RSG	Industrials
+258	Global Payments Inc.	GPN	Financials
+259	ANSYS Inc.	ANSS	Information Technology
+260	Edison International	EIX	Utilities
+261	Zimmer Biomet Holdings Inc.	ZBH	Health Care
+262	Eversource Energy	ES	Utilities
+263	State Street Corporation	STT	Financials
+264	West Pharmaceutical Services Inc.	WST	Health Care
+265	AmerisourceBergen Corporation	ABC	Health Care
+266	Ulta Beauty Inc.	ULTA	Consumer Discretionary
+267	PG&E Corporation	PCG	Utilities
+268	Discover Financial Services	DFS	Financials
+269	Diamondback Energy Inc.	FANG	Energy
+270	Corning Inc	GLW	Information Technology
+271	Lennar Corporation Class A	LEN	Consumer Discretionary
+272	Digital Realty Trust Inc.	DLR	Real Estate
+273	Tractor Supply Company	TSCO	Consumer Discretionary
+274	Arch Capital Group Ltd.	ACGL	Financials
+275	HP Inc.	HPQ	Information Technology
+276	United Rentals Inc.	URI	Industrials
+277	Walgreens Boots Alliance Inc.	WBA	Consumer Staples
+278	CDW Corporation	CDW	Information Technology
+279	Willis Towers Watson Public Limited Company	WTW	Financials
+280	Gartner Inc.	IT	Information Technology
+281	T. Rowe Price Group	TROW	Financials
+282	Constellation Energy Corporation	CEG	Utilities
+283	Align Technology Inc.	ALGN	Health Care
+284	LyondellBasell Industries NV	LYB	Materials
+285	Equifax Inc.	EFX	Industrials
+286	International Flavors & Fragrances Inc.	IFF	Materials
+287	AvalonBay Communities Inc.	AVB	Real Estate
+288	Albemarle Corporation	ALB	Materials
+289	Fortive Corp.	FTV	Industrials
+290	eBay Inc.	EBAY	Consumer Discretionary
+291	Quanta Services Inc.	PWR	Industrials
+292	Ameren Corporation	AEE	Utilities
+293	Genuine Parts Company	GPC	Consumer Discretionary
+294	Weyerhaeuser Company	WY	Real Estate
+295	Ingersoll Rand Inc.	IR	Industrials
+296	Hartford Financial Services Group Inc.	HIG	Financials
+297	Vulcan Materials Company	VMC	Materials
+298	CBRE Group Inc. Class A	CBRE	Real Estate
+299	FirstEnergy Corp.	FE	Utilities
+300	Entergy Corporation	ETR	Utilities
+301	Insulet Corporation	PODD	Health Care
+302	DTE Energy Company	DTE	Utilities
+303	Church & Dwight Co. Inc.	CHD	Consumer Staples
+304	Baxter International Inc.	BAX	Health Care
+305	Martin Marietta Materials Inc.	MLM	Materials
+306	McCormick & Company Incorporated	MKC	Consumer Staples
+307	Delta Air Lines Inc.	DAL	Industrials
+308	Monolithic Power Systems Inc.	MPWR	Information Technology
+309	Extra Space Storage Inc.	EXR	Real Estate
+310	Hologic Inc.	HOLX	Health Care
+311	Cardinal Health Inc.	CAH	Health Care
+312	PPL Corporation	PPL	Utilities
+313	First Solar Inc.	FSLR	Information Technology
+314	Teledyne Technologies Incorporated	TDY	Information Technology
+315	Dover Corporation	DOV	Industrials
+316	Hewlett Packard Enterprise Co.	HPE	Information Technology
+317	Laboratory Corporation of America Holdings	LH	Health Care
+318	Equity Residential	EQR	Real Estate
+319	Coterra Energy Inc.	CTRA	Energy
+320	VeriSign Inc.	VRSN	Information Technology
+321	M&T Bank Corporation	MTB	Financials
+322	Clorox Company	CLX	Consumer Staples
+323	Take-Two Interactive Software Inc.	TTWO	Communication Services
+324	CenterPoint Energy Inc.	CNP	Utilities
+325	STERIS Plc	STE	Health Care
+326	Omnicom Group Inc	OMC	Communication Services
+327	Southwest Airlines Co.	LUV	Industrials
+328	Xylem Inc.	XYL	Industrials
+329	Alexandria Real Estate Equities Inc.	ARE	Real Estate
+330	Las Vegas Sands Corp.	LVS	Consumer Discretionary
+331	Nasdaq Inc.	NDAQ	Financials
+332	Darden Restaurants Inc.	DRI	Consumer Discretionary
+333	Cooper Companies Inc.	COO	Health Care
+334	Waters Corporation	WAT	Health Care
+335	Northern Trust Corporation	NTRS	Financials
+336	Invitation Homes Inc.	INVH	Real Estate
+337	Fifth Third Bancorp	FITB	Financials
+338	Westinghouse Air Brake Technologies Corporation	WAB	Industrials
+339	CMS Energy Corporation	CMS	Utilities
+340	Tyson Foods Inc. Class A	TSN	Consumer Staples
+341	Raymond James Financial Inc.	RJF	Financials
+342	Conagra Brands Inc.	CAG	Consumer Staples
+343	Fair Isaac Corporation	FICO	Information Technology
+344	Expeditors International of Washington Inc.	EXPD	Industrials
+345	Cincinnati Financial Corporation	CINF	Financials
+346	Molina Healthcare Inc.	MOH	Health Care
+347	Ventas Inc.	VTR	Real Estate
+348	Steel Dynamics Inc.	STLD	Materials
+349	Kellogg Company	K	Consumer Staples
+350	Skyworks Solutions Inc.	SWKS	Information Technology
+351	PerkinElmer Inc.	PKI	Health Care
+352	Regions Financial Corporation	RF	Financials
+353	Targa Resources Corp.	TRGP	Energy
+354	Broadridge Financial Solutions Inc.	BR	Industrials
+355	SolarEdge Technologies Inc.	SEDG	Information Technology
+356	EPAM Systems Inc.	EPAM	Information Technology
+357	AES Corporation	AES	Utilities
+358	Principal Financial Group Inc.	PFG	Financials
+359	Mid-America Apartment Communities Inc.	MAA	Real Estate
+360	NVR Inc.	NVR	Consumer Discretionary
+361	Amcor PLC	AMCR	Materials
+362	IDEX Corporation	IEX	Industrials
+363	J.M. Smucker Company	SJM	Consumer Staples
+364	Atmos Energy Corporation	ATO	Utilities
+365	Marathon Oil Corporation	MRO	Energy
+366	Quest Diagnostics Incorporated	DGX	Health Care
+367	Ball Corporation	BALL	Materials
+368	Huntington Bancshares Incorporated	HBAN	Financials
+369	FLEETCOR Technologies Inc.	FLT	Financials
+370	Howmet Aerospace Inc.	HWM	Industrials
+371	FactSet Research Systems Inc.	FDS	Financials
+372	Teradyne Inc.	TER	Information Technology
+373	Mosaic Company	MOS	Materials
+374	Zebra Technologies Corporation Class A	ZBRA	Information Technology
+375	Lamb Weston Holdings Inc.	LW	Consumer Staples
+376	Iron Mountain Inc.	IRM	Real Estate
+377	FMC Corporation	FMC	Materials
+378	Garmin Ltd.	GRMN	Consumer Discretionary
+379	Tyler Technologies Inc.	TYL	Information Technology
+380	CF Industries Holdings Inc.	CF	Materials
+381	Jacobs Solutions Inc.	J	Industrials
+382	Interpublic Group of Companies Inc.	IPG	Communication Services
+383	Paycom Software Inc.	PAYC	Information Technology
+384	Best Buy Co. Inc.	BBY	Consumer Discretionary
+385	Avery Dennison Corporation	AVY	Materials
+386	NetApp Inc.	NTAP	Information Technology
+387	J.B. Hunt Transport Services Inc.	JBHT	Industrials
+388	Citizens Financial Group Inc.	CFG	Financials
+389	Textron Inc.	TXT	Industrials
+390	Everest Re Group Ltd.	RE	Financials
+391	Evergy Inc.	EVRG	Utilities
+392	Cboe Global Markets Inc	CBOE	Financials
+393	LKQ Corporation	LKQ	Consumer Discretionary
+394	Bunge Limited	BG	Consumer Staples
+395	Incyte Corporation	INCY	Health Care
+396	MGM Resorts International	MGM	Consumer Discretionary
+397	Brown & Brown Inc.	BRO	Financials
+398	Alliant Energy Corp	LNT	Utilities
+399	United Airlines Holdings Inc.	UAL	Industrials
+400	PTC Inc.	PTC	Information Technology
+401	PulteGroup Inc.	PHM	Consumer Discretionary
+402	Expedia Group Inc.	EXPE	Consumer Discretionary
+403	Essex Property Trust Inc.	ESS	Real Estate
+404	Royal Caribbean Group	RCL	Consumer Discretionary
+405	Packaging Corporation of America	PKG	Materials
+406	Pool Corporation	POOL	Consumer Discretionary
+407	APA Corporation	APA	Energy
+408	Bio-Techne Corporation	TECH	Health Care
+409	Akamai Technologies Inc.	AKAM	Information Technology
+410	International Paper Company	IP	Materials
+411	Synchrony Financial	SYF	Financials
+412	MarketAxess Holdings Inc.	MKTX	Financials
+413	W. R. Berkley Corporation	WRB	Financials
+414	Snap-on Incorporated	SNA	Industrials
+415	Seagate Technology Holdings PLC	STX	Information Technology
+416	Etsy Inc.	ETSY	Consumer Discretionary
+417	Leidos Holdings Inc.	LDOS	Industrials
+418	Trimble Inc.	TRMB	Information Technology
+419	Teleflex Incorporated	TFX	Health Care
+420	UDR Inc.	UDR	Real Estate
+421	Viatris Inc.	VTRS	Health Care
+422	EQT Corporation	EQT	Energy
+423	Domino's Pizza Inc.	DPZ	Consumer Discretionary
+424	Western Digital Corporation	WDC	Information Technology
+425	Nordson Corporation	NDSN	Industrials
+426	Healthpeak Properties Inc.	PEAK	Real Estate
+427	Host Hotels & Resorts Inc.	HST	Real Estate
+428	Stanley Black & Decker Inc.	SWK	Industrials
+429	Hormel Foods Corporation	HRL	Consumer Staples
+430	Jack Henry & Associates Inc.	JKHY	Financials
+431	Wynn Resorts Limited	WYNN	Consumer Discretionary
+432	Kimco Realty Corporation	KIM	Real Estate
+433	KeyCorp	KEY	Financials
+434	Camden Property Trust	CPT	Real Estate
+435	BorgWarner Inc.	BWA	Consumer Discretionary
+436	NiSource Inc	NI	Utilities
+437	Catalent Inc	CTLT	Health Care
+438	Brown-Forman Corporation Class B	BF.B	Consumer Staples
+439	C.H. Robinson Worldwide Inc.	CHRW	Industrials
+440	Henry Schein Inc.	HSIC	Health Care
+441	Campbell Soup Company	CPB	Consumer Staples
+442	Paramount Global Class B	PARA	Communication Services
+443	CarMax Inc.	KMX	Consumer Discretionary
+444	Celanese Corporation	CE	Materials
+445	Loews Corporation	L	Financials
+446	Masco Corporation	MAS	Industrials
+447	Juniper Networks Inc.	JNPR	Information Technology
+448	Molson Coors Beverage Company Class B	TAP	Consumer Staples
+449	Charles River Laboratories International Inc.	CRL	Health Care
+450	Fox Corporation Class A	FOXA	Communication Services
+451	Ceridian HCM Holding Inc.	CDAY	Information Technology
+452	Bio-Rad Laboratories Inc. Class A	BIO	Health Care
+453	Gen Digital Inc.	GEN	Information Technology
+454	Tapestry Inc.	TPR	Consumer Discretionary
+455	Match Group Inc.	MTCH	Communication Services
+456	Eastman Chemical Company	EMN	Materials
+457	Live Nation Entertainment Inc.	LYV	Communication Services
+458	Carnival Corporation	CCL	Consumer Discretionary
+459	Globe Life Inc.	GL	Financials
+460	Qorvo Inc.	QRVO	Information Technology
+462	Caesars Entertainment Inc	CZR	Consumer Discretionary
+463	Regency Centers Corporation	REG	Real Estate
+464	Rollins Inc.	ROL	Industrials
+465	Allegion Public Limited Company	ALLE	Industrials
+466	Pinnacle West Capital Corporation	PNW	Utilities
+467	DENTSPLY SIRONA Inc.	XRAY	Health Care
+468	Pentair plc	PNR	Industrials
+469	Universal Health Services Inc. Class B	UHS	Health Care
+470	F5 Inc.	FFIV	Information Technology
+471	A. O. Smith Corporation	AOS	Industrials
+472	American Airlines Group Inc.	AAL	Industrials
+473	NRG Energy Inc.	NRG	Utilities
+474	Huntington Ingalls Industries Inc.	HII	Industrials
+475	Robert Half International Inc.	RHI	Industrials
+476	Bath & Body Works Inc.	BBWI	Consumer Discretionary
+477	Franklin Resources Inc.	BEN	Financials
+478	WestRock Company	WRK	Materials
+479	Invesco Ltd.	IVZ	Financials
+480	Advance Auto Parts Inc.	AAP	Consumer Discretionary
+481	Whirlpool Corporation	WHR	Consumer Discretionary
+482	Boston Properties Inc.	BXP	Real Estate
+483	V.F. Corporation	VFC	Consumer Discretionary
+484	Federal Realty Investment Trust	FRT	Real Estate
+485	Sealed Air Corporation	SEE	Materials
+486	News Corporation Class A	NWSA	Communication Services
+487	Hasbro Inc.	HAS	Consumer Discretionary
+488	Generac Holdings Inc.	GNRC	Industrials
+489	Assurant Inc.	AIZ	Financials
+490	Organon & Co.	OGN	Health Care
+491	DXC Technology Co.	DXC	Information Technology
+492	Comerica Incorporated	CMA	Financials
+493	Norwegian Cruise Line Holdings Ltd.	NCLH	Consumer Discretionary
+494	Alaska Air Group Inc.	ALK	Industrials
+495	Mohawk Industries Inc.	MHK	Consumer Discretionary
+496	Ralph Lauren Corporation Class A	RL	Consumer Discretionary
+497	DaVita Inc.	DVA	Health Care
+498	Zions Bancorporation N.A.	ZION	Financials
+499	Newell Brands Inc	NWL	Consumer Discretionary
+500	Fox Corporation Class B	FOX	Communication Services
+502	Axon Enterprise Inc	AXON	Taser - Weapons Technology
+503	News Corporation Class B	NWS	Communication Services
+504	DISH Network Corporation Class A	DISH	Communication Services
